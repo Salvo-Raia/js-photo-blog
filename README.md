@@ -23,7 +23,7 @@ Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfrut
 ### Font utilizzati:
 
 titoli:  ‘Edu Tas Beginner’, sans-serif;d
-ate: ‘Sometype Mono’, ‘monospace’;
+date: ‘Sometype Mono’, ‘monospace’;
 (Dovreste sapere a questo punto cosa e come prendere da Google Fonts… 😉)
 
 **Bonus**
