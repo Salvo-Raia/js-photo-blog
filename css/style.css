@@ -5,7 +5,8 @@ main {
 h1 {
     font-size: 80px;
     background-image: url(../img/wall.png);
-    background-size: cover;
+    background-size: 500px;
+    border-bottom: 2px solid rgb(128, 128, 128);
 }
 
 /* Polaroid style */
@@ -16,14 +17,13 @@ h1 {
 .polaroid {
     position: relative;
     background-color: antiquewhite;
+    padding: 15px 15px 15px;
     flex-basis: calc(100% /3 - 80px * 3 /2);
 }
 
 .polaroid .photo {
     display: block;
     width: 280px;
-    padding-top: 15px;
-    margin: 0 auto;
 }
 
 .polaroid .pin {
