@@ -1,0 +1,25 @@
+console.log("Js is ready");
+const photoDeck = document.getElementById("photo-deck")
+
+
+axios.get("https://lanciweb.github.io/demo/api/pictures/")
+     .then((response) => {
+        const photoGallery = response.data.map(singleObject => {
+            return {
+                title: singleObject.title,
+                date: singleObject.date,
+                url: singleObject.url
+            }
+        })
+        photoGallery.forEach(photo => {
+            photoDeck.innerHTML += `<div class="polaroid col-12">
+                    
+                    <img src=${photo.url} alt="example photo">
+                    <div class="photo-caption">
+                        <h5>${photo.title}.</h5>
+                        <p>${photo.date}</p>
+                    </div>
+                </div>`
+        })
+     })
+
