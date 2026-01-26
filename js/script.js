@@ -12,9 +12,8 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             }
         })
         photoGallery.forEach(photo => {
-            photoDeck.innerHTML += `<div class="polaroid col-12">
-                    
-                    <img src=${photo.url} alt="example photo">
+            photoDeck.innerHTML += `<div class="polaroid">
+                    <img src=${photo.url} alt="${photo.title}">
                     <div class="photo-caption">
                         <h5>${photo.title}.</h5>
                         <p>${photo.date}</p>

@@ -9,19 +9,23 @@ h1 {
 }
 
 /* Polaroid style */
+.photo-deck {
+    gap: 80px;
+}
+
 .polaroid {
-    width: 300px;
+
     background-color: antiquewhite;
+    flex-basis: calc(100% /3 - 80px * 3 /2);
 }
 
 .polaroid img {
     display: block;
+    width: 280px;
+    padding-top: 15px;
     margin: 0 auto;
-    width: 260px;
-    padding-top: 20px;
 }
 
 .photo-caption {
-    padding: 5px 25px;
-    margin: 2px 0;
+    padding: 5px 15px;
 }
