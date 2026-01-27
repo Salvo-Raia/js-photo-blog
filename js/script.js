@@ -1,5 +1,7 @@
 console.log("Js is ready");
-const photoDeck = document.getElementById("photo-deck")
+const photoDeck = document.getElementById("photo-deck");
+const overlay = document.getElementById("overlay");
+const overlayCloseButton = document.querySelector(".btn")
 
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
@@ -19,6 +21,13 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             </div>` 
         })
         photoDeck.innerHTML = generateCard; 
+        const photo = document.querySelector(".polaroid"); 
+        photo.addEventListener("click", function () {
+        console.log("Sto funzionando");
+        overlay.classList.toggle("d-none");
+})
+        overlayCloseButton.addEventListener("click", function () {
+        overlay.classList.add("d-none")
+        })
     })
-
 

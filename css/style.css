@@ -39,6 +39,10 @@ h1 {
     color: rgb(99, 99, 99);
 }
 
+.polaroid:hover {
+    cursor: pointer;
+}
+
 /* Overlay */ 
 #overlay {
     position: fixed;
