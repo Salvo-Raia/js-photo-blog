@@ -29,8 +29,6 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         photoDeck.innerHTML = generateCard; 
         const polaroids = document.querySelectorAll(".polaroid"); 
         const pin = document.querySelectorAll(".pin");
-        console.log(polaroids);
-        console.log(pin);
         
         for (let i= 0; i < polaroids.length; i++) {
             let currentPhoto = photoGallery[i]; 
