@@ -2,7 +2,6 @@
 const photoDeck = document.getElementById("photo-deck");
 const overlay = document.getElementById("overlay");
 const overlayContents = document.getElementById("overlay-contents");
-const overlayCloseButton = overlay.querySelector(".btn");
 const pickPhotoAudio = document.getElementById("paper-lift");
 const leavePhotoAudio = document.getElementById("paper-leave");
 const hoverSound = document.getElementById("hover-sound");
@@ -26,6 +25,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
                 </div>
             </div>` 
         })
+
         photoDeck.innerHTML = generateCard; 
         const polaroids = document.querySelectorAll(".polaroid"); 
         const pin = document.querySelectorAll(".pin");
@@ -34,44 +34,16 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             let currentPhoto = photoGallery[i]; 
             let currentPin = pin[i];
             polaroids[i].addEventListener("mouseenter", function () {
-                hoverSound.play();
-                polaroids[i].classList.add("polaroid-is-hover");
-                currentPin.classList.toggle("d-none");
+                mouseEnter(polaroids[i], currentPin);
             })
             polaroids[i].addEventListener("mouseleave", function () {
-                polaroids[i].classList.remove("polaroid-is-hover");
-                currentPin.classList.toggle("d-none");
+                mouseLeave(polaroids[i], currentPin);
             })
             polaroids[i].addEventListener("click", function () {
-            pickPhotoAudio.play();
-            activePolaroid = polaroids[i];
-            polaroids[i].classList.remove("polaroid-is-hover");
-            activePolaroid.classList.add("d-none");
-            overlay.classList.toggle("d-none");
-            overlayContents.innerHTML = `
-                                 <img src="${currentPhoto.url}" alt="${currentPhoto.title}">
-                                 <p class="text-white m-0">${currentPhoto.date}</p>
-                                 <h3 class="text-white m-0">${currentPhoto.title}</h3>`;
+                polaroidClick(polaroids[i], currentPhoto)
          }) 
         }
     })
 
-    /* Close overlay event listeners */
-    overlayCloseButton.addEventListener("click", function () {
-        leavePhotoAudio.play();
-    overlay.classList.toggle("d-none");
-    if (activePolaroid) {
-        activePolaroid.classList.remove("d-none");
-        activePolaroid = null;
-    }
-        })  
 
-    document.addEventListener("keydown", function(event) {
-        leavePhotoAudio.play();
-    if (event.key === "Escape") {
-        overlay.classList.add("d-none");
-    if (activePolaroid) {
-    activePolaroid.classList.remove("d-none");
-    activePolaroid = null;
-    }
-    }})
+
