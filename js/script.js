@@ -23,11 +23,18 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         photoDeck.innerHTML = generateCard; 
         const photo = document.querySelector(".polaroid"); 
         photo.addEventListener("click", function () {
-        console.log("Sto funzionando");
-        overlay.classList.toggle("d-none");
+        overlay.classList.remove("d-none");
 })
-        overlayCloseButton.addEventListener("click", function () {
-        overlay.classList.add("d-none")
-        })
     })
+
+
+    /* Eventi di chiusura overlay */ 
+    overlayCloseButton.addEventListener("click", function () {
+        overlay.classList.add("d-none")
+        })  
+        
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        overlay.classList.add("d-none");
+    }})
 
