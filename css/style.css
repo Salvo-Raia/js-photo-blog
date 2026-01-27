@@ -17,6 +17,7 @@ h1 {
     background-color: antiquewhite;
     padding: 20px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s linear;
 }
 
 .polaroid .pin {
@@ -43,6 +44,7 @@ h1 {
 
 .polaroid:hover {
     cursor: pointer;
+    transform: rotate(10deg);
 }
 
 /* Overlay */ 
