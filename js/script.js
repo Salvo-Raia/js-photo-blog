@@ -2,6 +2,7 @@ const photoDeck = document.getElementById("photo-deck");
 const overlay = document.getElementById("overlay");
 const overlayContents = document.getElementById("overlay-contents")
 const overlayCloseButton = overlay.querySelector(".btn")
+let activePolaroid = null; 
 
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
@@ -31,13 +32,18 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             let currentPin = pin[i];
             polaroids[i].addEventListener("mouseenter", function () {
                 console.log("stai passando su di me", currentPin);
+                polaroids[i].classList.add("polaroid-is-hover")
                 currentPin.classList.toggle("d-none")
             })
             polaroids[i].addEventListener("mouseleave", function () {
                 console.log("stai passando su di me", currentPin);
+                polaroids[i].classList.remove("polaroid-is-hover")
                 currentPin.classList.toggle("d-none")
             })
             polaroids[i].addEventListener("click", function () {
+            activePolaroid = polaroids[i];
+            polaroids[i].classList.remove("polaroid-is-hover")
+            activePolaroid.classList.add("d-none");
             overlay.classList.toggle("d-none");
             overlayContents.innerHTML = `
                                  <img src="${currentPhoto.url}" alt="${currentPhoto.title}">
@@ -49,10 +55,18 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
 
     /* Eventi di chiusura overlay */
     overlayCloseButton.addEventListener("click", function () {
-    overlay.classList.toggle("d-none")
+    overlay.classList.toggle("d-none");
+    if (activePolaroid) {
+        activePolaroid.classList.remove("d-none");
+        activePolaroid = null;
+    }
         })  
 
     document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         overlay.classList.add("d-none");
+    if (activePolaroid) {
+    activePolaroid.classList.remove("d-none");
+    activePolaroid = null;
+    }
     }})

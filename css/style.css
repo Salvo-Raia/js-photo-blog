@@ -11,13 +11,18 @@ h1 {
     background-size: 500px;
 }
 
+main {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 /* Polaroid style */
 .polaroid {
     position: relative;
     background-color: antiquewhite;
     padding: 20px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
 }
 
 .polaroid .pin {
@@ -42,9 +47,11 @@ h1 {
     color: rgb(99, 99, 99);
 }
 
-.polaroid:hover {
+.polaroid-is-hover {
     cursor: pointer;
-    transform: rotate(10deg);
+    z-index: 1;
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Overlay */ 
