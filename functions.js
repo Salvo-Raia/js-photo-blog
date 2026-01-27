@@ -25,21 +25,21 @@
                 elementIWannaHide.classList.toggle("d-none");
     }
     
-        overlayCloseButton.addEventListener("click", function () {
+    overlayCloseButton.addEventListener("click", function () {
         leavePhotoAudio.play();
-    overlay.classList.toggle("d-none");
-    if (activePolaroid) {
-        activePolaroid.classList.remove("d-none");
-        activePolaroid = null;
+        overlay.classList.toggle("d-none");
+        if (activePolaroid) {
+            activePolaroid.classList.remove("d-none");
+            activePolaroid = null;
     }
         })  
 
     document.addEventListener("keydown", function(event) {
         leavePhotoAudio.play();
-    if (event.key === "Escape") {
+        if (event.key === "Escape") {
         overlay.classList.add("d-none");
-    if (activePolaroid) {
-    activePolaroid.classList.remove("d-none");
-    activePolaroid = null;
+        if (activePolaroid) {
+            activePolaroid.classList.remove("d-none");
+            activePolaroid = null;
     }
     }})

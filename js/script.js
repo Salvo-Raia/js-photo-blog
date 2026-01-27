@@ -11,7 +11,7 @@ let activePolaroid = null;
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
         let generateCard = "";
-        const photoGallery = response.data 
+        const photoGallery = response.data; 
         photoGallery.forEach((photo) => {
             generateCard += `
             <div class="col">
@@ -23,7 +23,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
                     <h5>${photo.title}</h5>
                 </div>
                 </div>
-            </div>` 
+            </div>`; 
         })
 
         photoDeck.innerHTML = generateCard; 
@@ -40,10 +40,14 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
                 mouseLeave(polaroids[i], currentPin);
             })
             polaroids[i].addEventListener("click", function () {
-                polaroidClick(polaroids[i], currentPhoto)
+                polaroidClick(polaroids[i], currentPhoto);
          }) 
         }
     })
-
-
-
+.catch((error) => {
+    photoDeck.className = ("text-center");
+    photoDeck.innerHTML = `
+            <div class="alert alert-danger border border-danger">
+            <p class="fs-3 m-0">😯 Impossibile caricare i contenuti: ${error} ❌</p>
+            </div>`; 
+})
