@@ -38,3 +38,14 @@ h1 {
     font-family: "Sometype Mono", monospace;
     color: rgb(99, 99, 99);
 }
+
+/* Overlay */ 
+#overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#overlay img {
+    height: 80vh;
+}
