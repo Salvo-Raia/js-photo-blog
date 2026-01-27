@@ -1,4 +1,3 @@
-console.log("Js is ready");
 const photoDeck = document.getElementById("photo-deck");
 const overlay = document.getElementById("overlay");
 const overlayCloseButton = document.querySelector(".btn")
@@ -7,10 +6,10 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
         let generateCard = "";
         const photoGallery = response.data 
-        photoGallery.forEach(photo => {
+        photoGallery.forEach((photo, i) => {
             generateCard += `
             <div class="col">
-                <div class="polaroid">
+                <div class="polaroid" data-photoindex="${i}">
                     <img src="./img/pin.svg" class="pin" alt="pin">
                     <img src="${photo.url}" class="photo img-fluid" alt="${photo.title}">
                 <div class="photo-caption my-2">
@@ -21,12 +20,16 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             </div>` 
         })
         photoDeck.innerHTML = generateCard; 
-        const photo = document.querySelector(".polaroid"); 
-        photo.addEventListener("click", function () {
-        overlay.classList.remove("d-none");
-})
+        const polaroids = document.querySelectorAll(".polaroid"); 
+        console.log("Ecco il nodo", polaroids); // Stampo il nodo //
+        for (polaroid of polaroids) {
+            console.log(polaroid.dataset); // Stampo il singolo elemento del nodo con l'index//
+            polaroid.addEventListener("click", function () {
+            console.log("Hai cliccato foto", this.dataset.photoindex);
+            overlay.classList.remove("d-none");
+         }) 
+        }
     })
-
 
     /* Eventi di chiusura overlay */ 
     overlayCloseButton.addEventListener("click", function () {
@@ -37,4 +40,3 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
     if (event.key === "Escape") {
         overlay.classList.add("d-none");
     }})
-
