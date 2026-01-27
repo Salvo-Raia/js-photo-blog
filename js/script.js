@@ -1,9 +1,14 @@
+// DOM Elements // 
 const photoDeck = document.getElementById("photo-deck");
 const overlay = document.getElementById("overlay");
-const overlayContents = document.getElementById("overlay-contents")
-const overlayCloseButton = overlay.querySelector(".btn")
+const overlayContents = document.getElementById("overlay-contents");
+const overlayCloseButton = overlay.querySelector(".btn");
+const pickPhotoAudio = document.getElementById("paper-lift");
+const leavePhotoAudio = document.getElementById("paper-leave");
+const hoverSound = document.getElementById("hover-sound");
 let activePolaroid = null; 
 
+// API and cards generator // 
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
         let generateCard = "";
@@ -23,7 +28,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         })
         photoDeck.innerHTML = generateCard; 
         const polaroids = document.querySelectorAll(".polaroid"); 
-        const pin = document.querySelectorAll(".pin")
+        const pin = document.querySelectorAll(".pin");
         console.log(polaroids);
         console.log(pin);
         
@@ -31,18 +36,18 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
             let currentPhoto = photoGallery[i]; 
             let currentPin = pin[i];
             polaroids[i].addEventListener("mouseenter", function () {
-                console.log("stai passando su di me", currentPin);
-                polaroids[i].classList.add("polaroid-is-hover")
-                currentPin.classList.toggle("d-none")
+                hoverSound.play();
+                polaroids[i].classList.add("polaroid-is-hover");
+                currentPin.classList.toggle("d-none");
             })
             polaroids[i].addEventListener("mouseleave", function () {
-                console.log("stai passando su di me", currentPin);
-                polaroids[i].classList.remove("polaroid-is-hover")
-                currentPin.classList.toggle("d-none")
+                polaroids[i].classList.remove("polaroid-is-hover");
+                currentPin.classList.toggle("d-none");
             })
             polaroids[i].addEventListener("click", function () {
+            pickPhotoAudio.play();
             activePolaroid = polaroids[i];
-            polaroids[i].classList.remove("polaroid-is-hover")
+            polaroids[i].classList.remove("polaroid-is-hover");
             activePolaroid.classList.add("d-none");
             overlay.classList.toggle("d-none");
             overlayContents.innerHTML = `
@@ -53,8 +58,9 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         }
     })
 
-    /* Eventi di chiusura overlay */
+    /* Close overlay event listeners */
     overlayCloseButton.addEventListener("click", function () {
+        leavePhotoAudio.play();
     overlay.classList.toggle("d-none");
     if (activePolaroid) {
         activePolaroid.classList.remove("d-none");
@@ -63,6 +69,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         })  
 
     document.addEventListener("keydown", function(event) {
+        leavePhotoAudio.play();
     if (event.key === "Escape") {
         overlay.classList.add("d-none");
     if (activePolaroid) {
