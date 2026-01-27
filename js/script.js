@@ -1,6 +1,7 @@
 const photoDeck = document.getElementById("photo-deck");
 const overlay = document.getElementById("overlay");
-const overlayCloseButton = document.querySelector(".btn")
+const overlayContents = document.getElementById("overlay-contents")
+const overlayCloseButton = overlay.querySelector(".btn")
 
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
@@ -25,21 +26,20 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         for (let i= 0; i < polaroids.length; i++) {
             let currentPhoto = photoGallery[i]; 
             polaroids[i].addEventListener("click", function () {
-            overlay.innerHTML = `<button class="btn btn-danger">Chiudimi</button>
+            overlay.classList.toggle("d-none");
+            overlayContents.innerHTML = `
                                  <img src="${currentPhoto.url}" alt="${currentPhoto.title}">
                                  <p class="text-white m-0">${currentPhoto.date}</p>
-                                 <h3 class="text-white">${currentPhoto.title}</h3>`
-            console.log(currentPhoto.id);
-            overlay.classList.remove("d-none");
+                                 <h3 class="text-white m-0">${currentPhoto.title}</h3>`;
          }) 
         }
     })
 
-    /* Eventi di chiusura overlay */ 
+    /* Eventi di chiusura overlay */
     overlayCloseButton.addEventListener("click", function () {
-        overlay.classList.add("d-none")
+    overlay.classList.toggle("d-none")
         })  
-        
+
     document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         overlay.classList.add("d-none");
