@@ -28,13 +28,15 @@ h1 {
     height: 35px;
 }
 
-.polaroid h5 {
+.polaroid h5,
+#overlay h3 {
     font-family: "Edu TAS Beginner", cursive;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.polaroid p {
+.polaroid p,
+#overlay p {
     font-family: "Sometype Mono", monospace;
     color: rgb(99, 99, 99);
 }

@@ -6,10 +6,10 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
 .then((response) => {
         let generateCard = "";
         const photoGallery = response.data 
-        photoGallery.forEach((photo, i) => {
+        photoGallery.forEach((photo) => {
             generateCard += `
             <div class="col">
-                <div class="polaroid" data-photoindex="${i}">
+                <div class="polaroid">
                     <img src="./img/pin.svg" class="pin" alt="pin">
                     <img src="${photo.url}" class="photo img-fluid" alt="${photo.title}">
                 <div class="photo-caption my-2">
@@ -21,11 +21,15 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
         })
         photoDeck.innerHTML = generateCard; 
         const polaroids = document.querySelectorAll(".polaroid"); 
-        console.log("Ecco il nodo", polaroids); // Stampo il nodo //
-        for (polaroid of polaroids) {
-            console.log(polaroid.dataset); // Stampo il singolo elemento del nodo con l'index//
-            polaroid.addEventListener("click", function () {
-            console.log("Hai cliccato foto", this.dataset.photoindex);
+
+        for (let i= 0; i < polaroids.length; i++) {
+            let currentPhoto = photoGallery[i]; 
+            polaroids[i].addEventListener("click", function () {
+            overlay.innerHTML = `<button class="btn btn-danger">Chiudimi</button>
+                                 <img src="${currentPhoto.url}" alt="${currentPhoto.title}">
+                                 <p class="text-white m-0">${currentPhoto.date}</p>
+                                 <h3 class="text-white">${currentPhoto.title}</h3>`
+            console.log(currentPhoto.id);
             overlay.classList.remove("d-none");
          }) 
         }
