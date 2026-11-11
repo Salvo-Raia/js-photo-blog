@@ -1,61 +1,118 @@
-# Esercizio: Photo Blog
+![Boolean Tech Academy](https://img.shields.io/badge/Boolean_Tech_Academy-001632?style=for-the-badge)
 
-Nome repo: `js-photo-blog`
+# 🎓 Exercise 31/50 - Photo Blog
 
-## Consegna giorno 1
+## 📌 Project Overview
 
-### Milestone 1
+| Property | Details |
+|:--|:--|
+| Repository | `js-photo-blog` |
+| Category | Boolean Tech Academy |
+| Type | Exercise |
+| Exercise | 31/50 |
 
-Sfruttando gli screen e gli asset in allegato riproduciamo la grafica proposta in maniera statica: concentriamoci su HTML e CSS riproducendo una singola fotografia (usiamo una qualunque immagine a piacimento)
+## 🎯 Assignment
 
-### Milestone 2
+Create a dynamic photo blog using the provided design references and assets.
 
-Utilizzando Postman, testiamo una chiamata a questo endpoint:
+The project is divided into two parts: first, build the photo gallery and retrieve its content from an API; then, implement an interactive overlay to display individual photographs.
 
-https://lanciweb.github.io/demo/api/pictures/
+### 📸 Part 1 - Photo Blog
 
-Studiamo bene la risposta e i dati che ci fornisce iniziando a pensare a come poterli sfruttare.
+#### Milestone 1 - Static Layout
 
-### Milestone 3
+Reproduce the proposed design using the supplied screenshots and assets.
 
-Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
+Focus on HTML and CSS, initially displaying just one photograph. You can use any image you like.
 
-### Font utilizzati:
+#### Milestone 2 - Explore the API
 
-titoli:  ‘Edu Tas Beginner’, sans-serif;d
-date: ‘Sometype Mono’, ‘monospace’;
-(Dovreste sapere a questo punto cosa e come prendere da Google Fonts… 😉)
+Using Postman, test a request to the following endpoint:
 
-**Bonus**
+`https://lanciweb.github.io/demo/api/pictures/`
 
-rendi la pagina responsive, in modo che su mobile e tablet le foto si dispongano man mano una sotto l’altra ed il titolo abbia una dimensione adeguata
+Study the API response carefully and understand the data it provides. Start thinking about how to use that information to populate the page.
 
-**Note**
+#### Milestone 3 - Dynamic Photo Gallery
 
-Non siete obbligati a usare Bootstrap: siete liberi di decidere come gestire lo stile 🙂
+Add a JavaScript file and make an AJAX request to the API.
 
-## Consegna giorno 2
+Use the response data to dynamically generate and display a collection of photographs on the page.
 
-### Milestone 1
+### 🎨 Fonts
 
-Facciamo in modo di creare un overlay che copra l’intera pagina e all’interno, centrata, disponiamo un’immagine qualunque ed un button di chiusura.
+Use the following Google Fonts:
 
-### Milestone 2
+- **Headings:** `Edu TAS Beginner`, sans-serif.
+- **Dates:** `Sometype Mono`, monospace.
 
-Facciamo sparire l’overlay con l’aiuto di una classe CSS che imposti il display: none .
+### ⭐ Bonus - Responsive Layout
 
-Dopodiché facciamo sì che cliccando una qualunque foto. L’overlay ricompaia.
+Make the page responsive so that:
 
-Cliccando invece il button di chiusura, l’overlay scompare nuovamente.
+- On mobile and tablet screens, photographs progressively stack into a single column.
+- The title adjusts its font size to fit smaller screens.
 
-### Milestone 3
+**Note:** Bootstrap is not required. You are free to choose how to manage the page styling.
 
-Inseriamo il pezzo di logica finale: quando una foto viene cliccata, dobbiamo fare in modo che sia proprio quella foto a essere mostrata all’interno dell’overlay.
+---
 
-Ci sono diversi modi di farlo, prova a sperimentare 🙂
+### 🖼️ Part 2 - Photo Overlay
 
-**Bonus**
+Continue working on the same repository, `js-photo-blog`, by implementing an interactive overlay for the photo gallery.
 
-Spostandosi col mouse sopra le foto, queste si zoommano, ruotano di 10 gradi e la loro ombra aumenta, il tutto in manierà fluida. Inoltre il mouse diventa un puntatore, per far capire all’utente che può cliccare
+#### Milestone 1 - Create the Overlay
+
+Create an overlay that covers the entire page.
+
+Inside it, place an image of your choice and a close button, both centered appropriately.
+
+#### Milestone 2 - Show and Hide the Overlay
+
+Initially hide the overlay using a CSS class that sets `display: none`.
+
+Then implement the following interactions:
+
+- Clicking any photograph makes the overlay visible.
+- Clicking the close button hides the overlay again.
+
+#### Milestone 3 - Display the Selected Photograph
+
+Complete the interaction logic: when a photograph is clicked, the overlay must display **that exact photograph**, rather than a generic image.
+
+There are several ways to achieve this, so experiment and find the solution that works best.
+
+### ⭐ Bonus - Interactive Hover Effects
+
+Add smooth hover effects to the photographs:
+
+- Zoom in.
+- Rotate by 10 degrees.
+- Increase the shadow intensity.
+- Change the mouse cursor to a pointer to indicate that the photographs are clickable.
+
+All effects should transition smoothly.
+
+## 🛠️ Technologies
+
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+
+## 💡 What I Learned
+
+- Reproducing a visual design using HTML and CSS.
+- Working with external APIs and JSON responses.
+- Testing API requests with Postman.
+- Making asynchronous HTTP requests using JavaScript.
+- Dynamically generating HTML elements from API data.
+- Building responsive layouts.
+- Creating full-screen overlays with CSS.
+- Handling click events to show and hide elements.
+- Dynamically updating an image source based on user interaction.
+- Applying CSS transitions and transforms for interactive hover effects.
+
+## ©️ Credits
+
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course - Class 152 - Year 2025-2026
 
 
