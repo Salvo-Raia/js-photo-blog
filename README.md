@@ -1,6 +1,8 @@
-![Boolean Tech Academy](https://img.shields.io/badge/Boolean_Tech_Academy-001632?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Boolean_Tech_Academy-1565C0?style=for-the-badge)
 
-# 🎓 Exercise 31/50 - Photo Blog
+# 🎓 Exercise 31/50: Photo Blog
+
+Building a dynamic, responsive photo blog by fetching images from an external API, generating a photo gallery, and implementing an interactive overlay with image selection and CSS hover effects.
 
 ## 📌 Project Overview
 
@@ -17,7 +19,7 @@ Create a dynamic photo blog using the provided design references and assets.
 
 The project is divided into two parts: first, build the photo gallery and retrieve its content from an API; then, implement an interactive overlay to display individual photographs.
 
-### 📸 Part 1 - Photo Blog
+### Part 1 - Photo Blog
 
 #### Milestone 1 - Static Layout
 
@@ -39,14 +41,14 @@ Add a JavaScript file and make an AJAX request to the API.
 
 Use the response data to dynamically generate and display a collection of photographs on the page.
 
-### 🎨 Fonts
+### 🔎 Notes
 
 Use the following Google Fonts:
 
 - **Headings:** `Edu TAS Beginner`, sans-serif.
 - **Dates:** `Sometype Mono`, monospace.
 
-### ⭐ Bonus - Responsive Layout
+### ⭐ Bonus
 
 Make the page responsive so that:
 
@@ -54,8 +56,6 @@ Make the page responsive so that:
 - The title adjusts its font size to fit smaller screens.
 
 **Note:** Bootstrap is not required. You are free to choose how to manage the page styling.
-
----
 
 ### 🖼️ Part 2 - Photo Overlay
 
@@ -82,7 +82,7 @@ Complete the interaction logic: when a photograph is clicked, the overlay must d
 
 There are several ways to achieve this, so experiment and find the solution that works best.
 
-### ⭐ Bonus - Interactive Hover Effects
+### ⭐ Bonus
 
 Add smooth hover effects to the photographs:
 
@@ -96,7 +96,6 @@ All effects should transition smoothly.
 ## 🛠️ Technologies
 
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
 
 ## 💡 What I Learned
 
@@ -113,6 +112,4 @@ All effects should transition smoothly.
 
 ## ©️ Credits
 
-Exercise assigned by **Boolean Tech Academy** as part of the Web Development course - Class 152 - Year 2025-2026
-
-
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course (Class 152, A.Y. 2025–2026).
