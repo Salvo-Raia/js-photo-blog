@@ -57,7 +57,7 @@ Make the page responsive so that:
 
 **Note:** Bootstrap is not required. You are free to choose how to manage the page styling.
 
-### 🖼️ Part 2 - Photo Overlay
+### Part 2 - Photo Overlay
 
 Continue working on the same repository, `js-photo-blog`, by implementing an interactive overlay for the photo gallery.
 
