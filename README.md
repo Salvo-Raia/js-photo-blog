@@ -8,7 +8,7 @@ Building a dynamic, responsive photo blog by fetching images from an external AP
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| js-photo-blog | Photo Blog | Exercise | JavaScript fetch API, dynamic rendering & DOM manipulation | 31/50 |
+| js-photo-blog | Photo Blog | Exercise | JavaScript, fetch API & DOM manipulation | 31/50 |
 
 ## Assignment
 
@@ -16,7 +16,7 @@ Create a dynamic photo blog using the provided design references and assets.
 
 The project is divided into two parts: first, build the photo gallery and retrieve its content from an API; then, implement an interactive overlay to display individual photographs.
 
-### Part 1 - Photo Blog
+### Part 1 - Photo blog
 
 #### Milestone 1: Static layout
 
