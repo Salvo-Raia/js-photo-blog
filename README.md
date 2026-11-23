@@ -58,13 +58,13 @@ Bootstrap is not required. You are free to choose how to manage the page styling
 
 Continue working on the same repository, `js-photo-blog`, by implementing an interactive overlay for the photo gallery.
 
-#### Milestone 1: Create the overlay
+#### Milestone 4: Create the overlay
 
 Create an overlay that covers the entire page.
 
 Inside it, place an image of your choice and a close button, both centered appropriately.
 
-#### Milestone 2: Show and hide the Overlay
+#### Milestone 5: Show and hide the Overlay
 
 Initially hide the overlay using a CSS class that sets `display: none`.
 
@@ -73,7 +73,7 @@ Then implement the following interactions.
 - Clicking any photograph makes the overlay visible.
 - Clicking the close button hides the overlay again.
 
-#### Milestone 3: Display the selected photograph
+#### Milestone 6: Display the selected photograph
 
 Complete the interaction logic: when a photograph is clicked, the overlay must display **that exact photograph**, rather than a generic image.
 
