@@ -8,7 +8,7 @@ Building a dynamic, responsive photo blog by fetching images from an external AP
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| js-photo-blog | Photo Blog | Exercise | JavaScript, fetch API & DOM manipulation | 31/50 |
+| js-photo-blog | Photo Blog | Exercise | JavaScript, Fetch API, DOM manipulation | 31/50 |
 
 ## Assignment
 
@@ -64,7 +64,7 @@ Create an overlay that covers the entire page.
 
 Inside it, place an image of your choice and a close button, both centered appropriately.
 
-#### Milestone 5: Show and hide the Overlay
+#### Milestone 5: Show and hide the overlay
 
 Initially hide the overlay using a CSS class that sets `display: none`.
 
