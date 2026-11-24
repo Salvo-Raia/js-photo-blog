@@ -18,6 +18,8 @@ The project is divided into two parts: first, build the photo gallery and retrie
 
 ### Part 1 - Photo blog
 
+Build the initial photo gallery, starting with its static layout and then populating it with images retrieved from the provided API.
+
 #### Milestone 1: Static layout
 
 Reproduce the proposed design using the supplied screenshots and assets.
